@@ -1,0 +1,17 @@
+[theme]
+base="light"
+
+# لون أساسي (Mint / Teal)
+primaryColor="#2bca68ff"
+
+# خلفية عامة فاتحة جدًا ومريحة
+backgroundColor="#8e8e8eff"
+
+# خلفية الكروت والتابات
+secondaryBackgroundColor="#262626ff"
+
+# لون النص
+textColor="#ffffffff"
+
+# الخط
+font="sans serif"
