@@ -362,6 +362,9 @@ if "role" not in st.session_state:
     st.session_state.logged_in = False
 
 db = st.session_state.db
+db.setdefault("accounts", {})
+db.setdefault("history", [])
+db.setdefault("appointments", [])
 
 # Users (Admin/Employee)
 USERS = {
@@ -784,7 +787,7 @@ if "Manage Appointments" in tab_names:
     with tabs[tab_names.index("Manage Appointments")]:
         st.header("🛠️ Branch Appointments Management")
 
-        if not db["appointments"]:
+        if not db.get("appointments", []):
             st.info("No appointments yet")
         else:
             for a in db["appointments"]:
