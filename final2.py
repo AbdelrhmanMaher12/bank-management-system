@@ -368,8 +368,8 @@ db = st.session_state.db
 
 # Users (Admin/Employee)
 USERS = {
-    "admin": {"password": "123", "role": "Admin"},
-    "employee1": {"password": "123", "role": "Employee"},
+    "admin": {"password": "123", "role": "admin"},
+    "employee1": {"password": "123", "role": "employee"},
 }
 
 # Sidebar Login
@@ -399,7 +399,7 @@ if st.session_state.logged_in and st.sidebar.button("Logout", key="logout_btn"):
 # =========================================
 #       Tabs Menu
 # ==========================================
-if st.session_state.role in ["Admin", "Employee"]:
+if st.session_state.role in ["admin", "employee"]:
     tab_names = [
         "Dashboard",
         "Open Account",
@@ -468,7 +468,7 @@ if "Update Account Status" in tab_names:
     with tabs[tab_names.index("Update Account Status")]:
         st.header("🧊 Update Account Status (Active / Frozen / Closed)")
 
-        if st.session_state.role not in ["admin", "Employee"]:
+        if st.session_state.role not in ["admin", "employee"]:
             st.error("Access denied")
             st.stop()
 
@@ -664,17 +664,16 @@ if "Currency Exchange" in tab_names:
         st.header("💱Currency Exchange")
 
         currency_list = ["EGP", "USD", "EUR", "GBP", "SAR", "AED", "KWD"]
-
         currency_rates = {
             "EGP": 1,
-            "USD": 50,
-            "EUR": 54,
-            "GBP": 63,
-            "SAR": 13.3,
-            "AED": 13.6,
-            "KWD": 162,
+            "USD": 47.5,  
+            "EUR": 55.8,   
+            "GBP": 63.8,   
+            "SAR": 12.7,   
+            "AED": 13.0,   
+            "KWD": 155,   
         }
-
+        
         amount = st.number_input("Amount", min_value=0.0, value=1.0, key="fx_amt")
         from_currency = st.selectbox(
             "From Currency", currency_list, index=1, key="fx_from"
