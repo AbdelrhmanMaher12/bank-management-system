@@ -57,15 +57,17 @@ def load_database():
     if os.path.exists(DB_FILE):
         with open(DB_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
+
             if "accounts" not in data:
                 data["accounts"] = {}
             if "history" not in data:
                 data["history"] = []
             if "appointments" not in data:
-                data["appointments"] = []
+                data["appointments"] = []  # ✅ السطر المهم
+
             return data
 
-    return {"accounts": {}, "history": []}
+    return {"accounts": {}, "history": [], "appointments": []}
 
 
 def save_database(data):
