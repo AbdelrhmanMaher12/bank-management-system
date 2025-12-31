@@ -368,7 +368,7 @@ db = st.session_state.db
 
 # Users (Admin/Employee)
 USERS = {
-    "admin": {"password": "123", "role": "admin"},
+    "admin1": {"password": "123", "role": "admin"},
     "employee1": {"password": "123", "role": "employee"},
 }
 
