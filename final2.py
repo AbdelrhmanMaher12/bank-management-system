@@ -7,17 +7,14 @@
 # ============================================================
 
 
-
 # =========================================
-# المكاتب المستخدمه في البروجيكت 
+# المكاتب المستخدمه في البروجيكت
 # =========================================
 import streamlit as st
 from datetime import datetime, date
 import json
 import os
 import base64
-
-
 
 
 # =========================================
@@ -52,9 +49,8 @@ st.write(
 )
 
 
-
 # ============================================================
-# Database 
+# Database
 # ============================================================
 DB_FILE = "database.json"
 def load_database():
@@ -65,7 +61,10 @@ def load_database():
                 data["accounts"] = {}
             if "history" not in data:
                 data["history"] = []
+            if "appointments" not in data:
+                data["appointments"] = []
             return data
+
     return {"accounts": {}, "history": []}
 
 
@@ -86,11 +85,9 @@ def add_history(db, action, account_id, amount=0, to_acc=None):
     )    
 
 
-
-
 # ============================================================
 #  محمد رافع
-# منطق التحويل , نفس الحساب ,  
+# منطق التحويل , نفس الحساب ,
 # ============================================================
 class Account_Rafaa:
     def __init__(self, acc_id, owner, balance=0.0, status="Active"):
@@ -152,7 +149,7 @@ class Bank_Rafaa:
 
 # ============================================================
 # Author: مصطفى عيد
-# صحه البيانات , انشاء , تحديث  , حفظ 
+# صحه البيانات , انشاء , تحديث  , حفظ
 # ============================================================
 def validate_name_eid(name: str) -> bool:
     return bool(name.strip()) and all(c.isalpha() or c.isspace() for c in name)
