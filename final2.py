@@ -353,7 +353,7 @@ def add_customer_to_account_batta(db, acc_id: str, name: str, phone: str, email:
 st.set_page_config(page_title="Bank Management System", layout="wide")
 
 set_background("bg5.png")
-st.title("🏦 Bank Management System nnnn")
+st.title("🏦 Bank Management System")
 
 # Session init
 if "db" not in st.session_state:
