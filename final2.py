@@ -350,7 +350,7 @@ def add_customer_to_account_batta(db, acc_id: str, name: str, phone: str, email:
 # ============================================================
 # Streamlit UI (Main App)
 # ============================================================
-st.set_page_config(page_title="Bank Management System", layout="wide")
+st.set_page_config(page_title="Bank Management System v2.0", layout="wide")
 
 set_background("bg5.png")
 st.title("🏦 Bank Management System")
